@@ -1300,6 +1300,7 @@
                   placeholder="Full name"
                   required
                   data-form-input
+                  id="fullName"
                 />
 
                 <input
@@ -1309,6 +1310,7 @@
                   placeholder="Email address"
                   required
                   data-form-input
+                  id="email"
                 />
               </div>
 
@@ -1318,9 +1320,10 @@
                 placeholder="Your Message"
                 required
                 data-form-input
+                id="message"
               ></textarea>
 
-              <button class="form-btn" type="submit">
+              <button class="form-btn" type="submit" id="subButton">
                 <ion-icon name="paper-plane"></ion-icon>
                 <span>Send Message</span>
               </button>
@@ -1333,6 +1336,9 @@
     <!--
     - custom js link
   -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./assets/js/script.js"></script>
 
     <!--

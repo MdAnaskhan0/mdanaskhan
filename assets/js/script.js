@@ -157,3 +157,39 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+const fullName = document.querySelector("#fullName");
+const email = document.querySelector("#email");
+const message = document.querySelector("message");
+const subBtn = document.querySelector("subButton");
+
+
+const sendEmail = () => {
+  const bodyMessage = `Name: ${fullName}<br>Email: ${email}<br>Message: ${message}`;
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "mdanaskhan.201902037@gmail.com",
+    Password: "136A40D80E158F4092843654F6431F34FAA6",
+    To: "mdanaskhan.201902037@gmail.com",
+    From: "mdanaskhan.201902037@gmail.com",
+    Subject: `${emailPhn.value} want to contact with you.`,
+    Body: bodyMessage,
+  }).then(
+    (message) => {
+      if (message == "OK") {
+        Swal.fire({
+          title: "Success!",
+          text: "login successfully.!",
+          icon: "success",
+        });
+      }
+    },
+    (error) => alert(`Failed to send email: ${JSON.stringify(error)}`)
+  );
+};
+
+
+subBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  sendEmail();
+});
